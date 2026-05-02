@@ -1,23 +1,167 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero {
+  padding: 5rem 1.5rem 4rem;
+  background: var(--revro-hero-bg);
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroInner {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.buttons {
+.badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--ifm-color-primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 5vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  color: var(--ifm-color-secondary-darkest);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.heroDescription {
+  font-size: 1rem;
+  color: var(--ifm-color-secondary-darker);
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+/* ── Cards ─────────────────────────────────────────────────── */
+.cardsSection {
+  padding: 3.5rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionLabel {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary);
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem;
+  border-radius: 16px;
+  border: 1px solid var(--revro-card-border);
+  background: var(--ifm-card-background-color);
+  box-shadow: var(--revro-card-shadow);
+  text-decoration: none !important;
+  color: inherit !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--revro-card-shadow-hover);
+  border-color: var(--ifm-color-primary-lighter);
+  text-decoration: none !important;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--ifm-color-secondary-darkest);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cardArrow {
+  margin-top: 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
   display: flex;
   align-items: center;
+  gap: 0.3rem;
+}
+
+/* ── Quick links footer band ────────────────────────────────── */
+.quickLinks {
+  background: var(--ifm-color-emphasis-100);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.quickLinksTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ifm-color-secondary-darker);
+  margin-bottom: 1.25rem;
+}
+
+.quickLinksRow {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.6rem 1.5rem;
+}
+
+.quickLink {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ifm-color-primary) !important;
+  text-decoration: none !important;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.quickLink:hover {
+  background: rgba(124, 58, 237, 0.08);
+  text-decoration: none !important;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .hero {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
